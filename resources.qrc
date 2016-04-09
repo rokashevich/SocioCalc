@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/tab_selected.png</file>
+        <file>images/textinput.png</file>
+        <file>images/toolbar.png</file>
+        <file>main.qml</file>
+        <file>images/button_default.png</file>
+        <file>images/button_pressed.png</file>
+        <file>images/button_autopressed.png</file>
+        <file>images/clear.png</file>
+        <file>images/tab_default.png</file>
+    </qresource>
+</RCC>
