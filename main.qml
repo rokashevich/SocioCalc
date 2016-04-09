@@ -57,13 +57,13 @@ ApplicationWindow {
 			anchors.bottom: parent.bottom
 			height: elementHeight
 			Row {//снизу-слева
-			anchors.fill: parent
-			Image {
-				source: "images/clear.png"
-				height: parent.height
-				width: height
-				MouseArea {anchors.fill:parent;onClicked:{clear();recalculate()}}
-			}
+				anchors.fill: parent
+				Image {
+					source: "images/clear.png"
+					height: parent.height
+					width: height
+					MouseArea {anchors.fill:parent;onClicked:{clear();recalculate()}}
+				}
 			}
 		}
 	}
@@ -87,25 +87,25 @@ ApplicationWindow {
 //     экстраверсия/интроверсия┐ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │
 //         интуиция/сенсорика┐ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │
 //             логика/этика┐ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │
-													[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,0], //Дон
-													[1,1,1,0,0,0,0,1,1,1,1,0,0,0,1,2,3,0], //Дюм
-													[1,1,0,1,0,1,1,0,0,1,0,1,0,0,1,2,1,0], //Гюго
-													[0,0,1,1,0,1,1,1,1,0,1,1,0,0,0,3,1,0], //Роб
+                          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,0], //Дон
+                          [1,1,1,0,0,0,0,1,1,1,1,0,0,0,1,2,3,0], //Дюм
+                          [1,1,0,1,0,1,1,0,0,1,0,1,0,0,1,2,1,0], //Гюго
+                          [0,0,1,1,0,1,1,1,1,0,1,1,0,0,0,3,1,0], //Роб
 
-													[1,0,0,1,1,1,0,0,1,1,1,0,0,1,0,0,1,1], //Гам
-													[0,1,1,1,1,1,0,1,0,0,0,0,0,1,1,1,1,1], //Макс
-													[0,1,0,0,1,0,1,0,1,0,1,1,0,1,1,1,2,1], //Жук
-													[1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,3,1], //Есь
+                          [1,0,0,1,1,1,0,0,1,1,1,0,0,1,0,0,1,1], //Гам
+                          [0,1,1,1,1,1,0,1,0,0,0,0,0,1,1,1,1,1], //Макс
+                          [0,1,0,0,1,0,1,0,1,0,1,1,0,1,1,1,2,1], //Жук
+                          [1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,3,1], //Есь
 
-													[1,1,0,0,0,1,1,1,1,0,0,0,1,1,0,1,1,2], //Нап
-													[0,0,1,0,0,1,1,0,0,1,1,0,1,1,1,0,1,2], //Баль
-													[0,0,0,1,0,0,0,1,1,1,0,1,1,1,1,0,2,2], //Джек
-													[1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,1,3,2], //Драй
+                          [1,1,0,0,0,1,1,1,1,0,0,0,1,1,0,1,1,2], //Нап
+                          [0,0,1,0,0,1,1,0,0,1,1,0,1,1,1,0,1,2], //Баль
+                          [0,0,0,1,0,0,0,1,1,1,0,1,1,1,1,0,2,2], //Джек
+                          [1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,1,3,2], //Драй
 
-													[0,1,0,1,1,0,1,1,0,1,1,0,1,0,0,2,1,3], //Штир
-													[1,0,1,1,1,0,1,0,1,0,0,0,1,0,1,3,3,3], //Дост
-													[1,0,0,0,1,1,0,1,0,0,1,1,1,0,1,3,2,3], //Гек
-													[0,1,1,0,1,1,0,0,1,1,0,1,1,0,0,2,1,3]  //Габ
+                          [0,1,0,1,1,0,1,1,0,1,1,0,1,0,0,2,1,3], //Штир
+                          [1,0,1,1,1,0,1,0,1,0,0,0,1,0,1,3,3,3], //Дост
+                          [1,0,0,0,1,1,0,1,0,0,1,1,1,0,1,3,2,3], //Гек
+                          [0,1,1,0,1,1,0,0,1,1,0,1,1,0,0,2,1,3]  //Габ
 	]
 	property var names: [
 		["ИЛЭ", "ENTP", "Дон Кихот",      "Дон",  "Интуитивно-логический экстраверт", "Искатель"       ],
@@ -169,28 +169,28 @@ ApplicationWindow {
 		result = r
 		}
 		for (i=0;i<model2.count;i++) {
-		if (model2.get(i).choice !== -1)
-			continue
-		var left = false
-		var right = false
-		for (j=0;j<result.length;j++) {
-			if      (matrix[result[j]][i] === 0) left  = true
-			else if (matrix[result[j]][i] === 1) right = true
-		}
-		if (left & !right) {
-			model2.get(i).choice = 0
-			model2.get(i).auto = true
-		} else if (!left & right) {
-			model2.get(i).choice = 1
-			model2.get(i).auto = true
-		}
+			if (model2.get(i).choice !== -1)
+				continue
+			var left = false
+			var right = false
+			for (j=0;j<result.length;j++) {
+				if      (matrix[result[j]][i] === 0) left  = true
+				else if (matrix[result[j]][i] === 1) right = true
+			}
+			if (left & !right) {
+				model2.get(i).choice = 0
+				model2.get(i).auto = true
+			} else if (!left & right) {
+				model2.get(i).choice = 1
+				model2.get(i).auto = true
+			}
 		}
 	}
 
 	function clear() {
 		for (var i=0;i<model2.count;i++) {
-		model2.get(i).auto = false
-		model2.get(i).choice = -1
+			model2.get(i).auto = false
+			model2.get(i).choice = -1
 		}
 	}
 
